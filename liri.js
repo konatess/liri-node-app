@@ -28,16 +28,18 @@ var dothis = {
                 else {
                     var result = JSON.parse(body)
                     var limit = 10
-                    if (result[0] === undefined) {
+                    if (result === undefined || result[0] === undefined) {
                         console.log('No results available')
                     }
                     else {
                         for (i = 0; i < limit; i++) {
-                            console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-                            console.log('~ VENUE:', result[i]['venue']['name']);
-                            console.log('~ LOCATION:', result[i]['venue']['country'] + ", "  + result[i]['venue']['city'] + ", "  + result[i]['venue']['region']);
-                            var date = moment(result[i]['datetime'], 'YYYY-MM-DDTHH:mm:ss').format('MM/DD/YYYY');
-                            console.log('~ DATE:', date + '\n');
+                            if (result[i] !== undefined) {
+                                console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+                                console.log('~ VENUE:', result[i]['venue']['name']);
+                                console.log('~ LOCATION:', result[i]['venue']['country'] + ", "  + result[i]['venue']['city'] + ", "  + result[i]['venue']['region']);
+                                var date = moment(result[i]['datetime'], 'YYYY-MM-DDTHH:mm:ss').format('MM/DD/YYYY');
+                                console.log('~ DATE:', date + '\n');
+                            }
                         }
                     }
                 }

@@ -6,7 +6,7 @@ This LIRI app has four possible commands: concert-this, spotify-this-song, movie
 
 I restricted command input using the inquirer npm package to reduce error input. This is what the menu looks like:
 
-    ![liri5](https://user-images.githubusercontent.com/36722674/47400748-74d03800-d6f3-11e8-8642-2f91bbdf8cb8.png)
+   ![liri5](https://user-images.githubusercontent.com/36722674/47400748-74d03800-d6f3-11e8-8642-2f91bbdf8cb8.png)
     
 The first three commands
 1. concert-this

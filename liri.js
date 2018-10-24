@@ -47,12 +47,13 @@ var dothis = {
                     try {
                         var result = JSON.parse(body)
                     } catch (error) {
-                        console.log('No results available.')
+                        // use return to skip the rest of the process
+                        return console.log('No results available. Check your spelling or try another search.')
                     }
                     // number of results to show, regardless if more are returned
                     var limit = 10
                     if (result === undefined || result[0] === undefined) {
-                        console.log('No results available')
+                        console.log('No results available.')
                     }
                     else {
                         for (i = 0; i < limit; i++) {
@@ -79,20 +80,26 @@ var dothis = {
                 else {
                     console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
                     for (i = 0; i < itemlimit; i++) {
-                        console.log('*')
-                        if(isValidProperty(data,"tracks")) {
-                            console.log('TRACK: ', data['tracks']['items'][i]['name']); 
-                            console.log('ALBUM: ', data['tracks']['items'][i]['album']['name']);
-                            console.log('ARTIST: ', data['tracks']['items'][i]['artists'][0]['name']); 
-                            if (data['tracks']['items'][i]['preview_url']) {
-                                console.log('PREVIEW: ', data['tracks']['items'][i]['preview_url'], '\n');
-                            } 
+                        if (data.tracks.items[i]) {
+                            console.log('*')
+                            if (isValidProperty(data.tracks.items, i)) {
+                                if (isValidProperty(data.tracks.items[i], "name"))
+                                console.log('TRACK: ', data['tracks']['items'][i]['name']); 
+                                console.log('ALBUM: ', data['tracks']['items'][i]['album']['name']);
+                                console.log('ARTIST: ', data['tracks']['items'][i]['artists'][0]['name']); 
+                                if (data['tracks']['items'][i]['preview_url']) {
+                                    console.log('PREVIEW: ', data['tracks']['items'][i]['preview_url'], '\n');
+                                } 
+                                else {
+                                    console.log('No preview available. \n');
+                                }
+                            }
                             else {
-                                console.log('No preview available. \n');
+                                console.log('Cannot find results for this song name.')
                             }
                         }
                         else {
-                            console.log('Cannot find results for this artist');
+                            console.log('Cannot find results for this song name.');
                             i = itemlimit;
                         }
                     }
@@ -112,7 +119,7 @@ var dothis = {
                     var result = JSON.parse(body)
                     console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
                     if (result['Title'] === undefined) {
-                        console.log('Information about this movie is not available')
+                        console.log('Information about this movie is not available.')
                     }
                     else {
                         console.log('TITLE: ', result['Title']);

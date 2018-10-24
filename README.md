@@ -4,11 +4,11 @@ Language interpretation and recognition interface homework for UW Coding Bootcam
 
 This LIRI app has four possible commands: concert-this, spotify-this-song, movie-this, and do-what-it-says. It takes in information from three different APIs to follow these commands. 
 
-I restricted command input using the inquirer npm package to reduce error input.
+I restricted command input using the inquirer npm package to reduce error input. This is what the menu looks like:
 
-
-![liri5](https://user-images.githubusercontent.com/36722674/47400748-74d03800-d6f3-11e8-8642-2f91bbdf8cb8.png)
-
+    ![liri5](https://user-images.githubusercontent.com/36722674/47400748-74d03800-d6f3-11e8-8642-2f91bbdf8cb8.png)
+    
+The first three commands
 1. concert-this
     This command uses the bandsintown API to search for performances and list the dates and locations of those performances. It lists up to 10 available results.
     
@@ -24,6 +24,8 @@ I restricted command input using the inquirer npm package to reduce error input.
     
 4. do-what-it-says
     This command randomly selects a command and input from a list, then follows the command.
+    
+    ![liri6](https://user-images.githubusercontent.com/36722674/47401039-88c86980-d6f4-11e8-95c8-e4171b1e0e5f.png)
 
 
 

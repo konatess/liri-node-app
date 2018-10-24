@@ -8,7 +8,7 @@ I restricted command input using the inquirer npm package to reduce error input.
 
    ![liri5](https://user-images.githubusercontent.com/36722674/47400748-74d03800-d6f3-11e8-8642-2f91bbdf8cb8.png)
     
-The first three commands
+The first three commands each use a different API: 
 1. concert-this
     This command uses the bandsintown API to search for performances and list the dates and locations of those performances. It lists up to 10 available results.
     
@@ -29,5 +29,5 @@ The first three commands
 
 
 
-![liri1](https://user-images.githubusercontent.com/36722674/47400585-a1d01b00-d6f2-11e8-9d9f-af75cfc241bc.png)
-![liri2](https://user-images.githubusercontent.com/36722674/47400586-a1d01b00-d6f2-11e8-80ab-38c1e2c152d2.png)
+   ![liri1](https://user-images.githubusercontent.com/36722674/47400585-a1d01b00-d6f2-11e8-9d9f-af75cfc241bc.png)
+   ![liri2](https://user-images.githubusercontent.com/36722674/47400586-a1d01b00-d6f2-11e8-80ab-38c1e2c152d2.png)
